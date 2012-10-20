@@ -1,0 +1,33 @@
+- model_class = Mouvement
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human
+
+%p
+  %strong= model_class.human_attribute_name(:payeur_id) + ':'
+  %br
+  = @mouvement.payeur_id
+%p
+  %strong= model_class.human_attribute_name(:texte) + ':'
+  %br
+  = @mouvement.texte
+%p
+  %strong= model_class.human_attribute_name(:montant_cents) + ':'
+  %br
+  = @mouvement.montant_cents
+%p
+  %strong= model_class.human_attribute_name(:type_de_mouvement_id) + ':'
+  %br
+  = @mouvement.type_de_mouvement_id
+%p
+  %strong= model_class.human_attribute_name(:fini) + ':'
+  %br
+  = @mouvement.fini
+%p
+  %strong= model_class.human_attribute_name(:pourcent_a_facturer_a_lautre) + ':'
+  %br
+  = @mouvement.pourcent_a_facturer_a_lautre
+
+.form-actions
+  = link_to t('.back', :default => t("helpers.links.back")), mouvements_path, :class => 'btn'
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_mouvement_path(@mouvement), :class => 'btn'
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), mouvement_path(@mouvement), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'

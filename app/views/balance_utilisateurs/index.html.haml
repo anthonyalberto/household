@@ -1,0 +1,27 @@
+- model_class = BalanceUtilisateur
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:utilisateur_id)
+      %th= model_class.human_attribute_name(:montant)
+      %th= model_class.human_attribute_name(:mois)
+      %th= model_class.human_attribute_name(:annee)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @balance_utilisateurs.each do |balance_utilisateur|
+      %tr
+        %td= link_to balance_utilisateur.id, balance_utilisateur_path(balance_utilisateur)
+        %td= balance_utilisateur.utilisateur.name
+        %td= balance_utilisateur.montant
+        %td= balance_utilisateur.mois
+        %td= balance_utilisateur.annee
+        %td=l balance_utilisateur.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_balance_utilisateur_path(balance_utilisateur), :class => 'btn btn-mini'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), balance_utilisateur_path(balance_utilisateur), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
+
+= link_to t('.new', :default => t("helpers.links.new")), new_balance_utilisateur_path, :class => 'btn btn-primary'

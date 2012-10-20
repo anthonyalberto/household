@@ -1,0 +1,8 @@
+= simple_form_for @balance_utilisateur, :html => { :class => 'form-horizontal' } do |f|
+  = f.association :utilisateur
+  = f.input :montant
+  = f.input :mois
+  = f.input :annee
+  .form-actions
+    = f.button :submit, :class => 'btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), balance_utilisateurs_path, :class => 'btn'

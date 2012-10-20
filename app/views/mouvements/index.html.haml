@@ -1,0 +1,31 @@
+- model_class = Mouvement
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:payeur_id)
+      %th= model_class.human_attribute_name(:texte)
+      %th= model_class.human_attribute_name(:montant_cents)
+      %th= model_class.human_attribute_name(:type_de_mouvement_id)
+      %th= model_class.human_attribute_name(:fini)
+      %th= model_class.human_attribute_name(:pourcent_a_facturer_a_lautre)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @mouvements.each do |mouvement|
+      %tr
+        %td= link_to mouvement.id, mouvement_path(mouvement)
+        %td= mouvement.payeur_id
+        %td= mouvement.texte
+        %td= mouvement.montant_cents
+        %td= mouvement.type_de_mouvement_id
+        %td= mouvement.fini
+        %td= mouvement.pourcent_a_facturer_a_lautre
+        %td=l mouvement.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_mouvement_path(mouvement), :class => 'btn btn-mini'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), mouvement_path(mouvement), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
+
+= link_to t('.new', :default => t("helpers.links.new")), new_mouvement_path, :class => 'btn btn-primary'

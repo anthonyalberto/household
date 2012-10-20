@@ -2,7 +2,7 @@ class MouvementRecurrentsController < ApplicationController
   # GET /mouvement_recurrents
   # GET /mouvement_recurrents.json
   def index
-    @mouvement_recurrents = MouvementRecurrent.where(utilisateur_id: current_utilisateur)
+    @mouvement_recurrents = MouvementRecurrent.all
 
     respond_to do |format|
       format.html # index.html.erb

@@ -44,20 +44,16 @@ ActiveRecord::Schema.define(:version => 20121020203310) do
   add_index "monnaies", ["iso"], :name => "index_monnaies_on_iso"
 
   create_table "mouvement_recurrents", :force => true do |t|
-    t.integer  "payeur_id",                                       :null => false
-    t.integer  "montant_cents",                                   :null => false
-    t.integer  "type_de_mouvement_id",                            :null => false
-    t.boolean  "fini",                         :default => false, :null => false
-    t.float    "pourcent_a_facturer_a_lautre", :default => 50.0,  :null => false
+    t.integer  "payeur_id",                                      :null => false
+    t.integer  "montant_cents",                                  :null => false
+    t.integer  "type_de_mouvement_id",                           :null => false
+    t.float    "pourcent_a_facturer_a_lautre", :default => 50.0, :null => false
     t.string   "frequence_manuelle"
     t.string   "frequence_automatique"
-    t.datetime "created_at",                                      :null => false
-    t.datetime "updated_at",                                      :null => false
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
   end
 
-  add_index "mouvement_recurrents", ["fini"], :name => "index_mouvement_recurrents_on_fini"
-  add_index "mouvement_recurrents", ["payeur_id", "fini"], :name => "index_mouvement_recurrents_on_payeur_id_and_fini"
-  add_index "mouvement_recurrents", ["payeur_id", "type_de_mouvement_id", "fini"], :name => "recurrent_payeur_et_type_de_mouvement_et_fini"
   add_index "mouvement_recurrents", ["payeur_id", "type_de_mouvement_id"], :name => "index_mouvement_recurrents_on_payeur_id_and_type_de_mouvement_id"
   add_index "mouvement_recurrents", ["payeur_id"], :name => "index_mouvement_recurrents_on_payeur_id"
   add_index "mouvement_recurrents", ["type_de_mouvement_id"], :name => "index_mouvement_recurrents_on_type_de_mouvement_id"

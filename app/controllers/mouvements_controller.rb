@@ -2,7 +2,7 @@ class MouvementsController < ApplicationController
   # GET /mouvements
   # GET /mouvements.json
   def index
-    @mouvements = Mouvement.where(utilisateur_id: current_utilisateur).order("fini DESC, id DESC")
+    @mouvements = Mouvement.order("fini DESC, id DESC")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -25,6 +25,7 @@ class MouvementsController < ApplicationController
   # GET /mouvements/new.json
   def new
     @mouvement = Mouvement.new
+    @mouvement.payeur = current_utilisateur
 
     respond_to do |format|
       format.html # new.html.erb

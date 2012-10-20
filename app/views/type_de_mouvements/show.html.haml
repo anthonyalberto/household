@@ -11,9 +11,8 @@
   %br
   = @type_de_mouvement.position
 %p
-  %strong= model_class.human_attribute_name(:image) + ':'
   %br
-  = @type_de_mouvement.image
+  = image_tag @type_de_mouvement.image.url(:thumb)
 %p
   %strong= model_class.human_attribute_name(:revenu) + ':'
   %br

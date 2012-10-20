@@ -5,9 +5,9 @@
   %thead
     %tr
       %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:image)
       %th= model_class.human_attribute_name(:nom)
       %th= model_class.human_attribute_name(:position)
-      %th= model_class.human_attribute_name(:image)
       %th= model_class.human_attribute_name(:revenu)
       %th= model_class.human_attribute_name(:created_at)
       %th=t '.actions', :default => t("helpers.actions")
@@ -15,9 +15,10 @@
     - @type_de_mouvements.each do |type_de_mouvement|
       %tr
         %td= link_to type_de_mouvement.id, type_de_mouvement_path(type_de_mouvement)
+        %td= image_tag type_de_mouvement.image.url(:thumb)
         %td= type_de_mouvement.nom
         %td= type_de_mouvement.position
-        %td= type_de_mouvement.image
+
         %td= type_de_mouvement.revenu
         %td=l type_de_mouvement.created_at
         %td

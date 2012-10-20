@@ -7,8 +7,8 @@
       %th= model_class.human_attribute_name(:id)
       %th= model_class.human_attribute_name(:payeur_id)
       %th= model_class.human_attribute_name(:texte)
-      %th= model_class.human_attribute_name(:montant_cents)
-      %th= model_class.human_attribute_name(:type_de_mouvement_id)
+      %th= model_class.human_attribute_name(:montant)
+      %th= model_class.human_attribute_name(:type_de_mouvement)
       %th= model_class.human_attribute_name(:fini)
       %th= model_class.human_attribute_name(:pourcent_a_facturer_a_lautre)
       %th= model_class.human_attribute_name(:created_at)
@@ -17,10 +17,15 @@
     - @mouvements.each do |mouvement|
       %tr
         %td= link_to mouvement.id, mouvement_path(mouvement)
-        %td= mouvement.payeur_id
+        %td
+          = mouvement.payeur.name
+          = image_tag mouvement.payeur.gravatar_url, width:50, height:50
+
         %td= mouvement.texte
-        %td= mouvement.montant_cents
-        %td= mouvement.type_de_mouvement_id
+        %td= mouvement.montant
+        %td
+          = mouvement.type_de_mouvement.nom
+          = image_tag mouvement.type_de_mouvement.image.url(:thumb)
         %td= mouvement.fini
         %td= mouvement.pourcent_a_facturer_a_lautre
         %td=l mouvement.created_at

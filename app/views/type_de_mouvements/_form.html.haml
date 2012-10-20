@@ -1,6 +1,9 @@
 = simple_form_for @type_de_mouvement, :html => { :class => 'form-horizontal' } do |f|
   = f.input :nom
   = f.input :position
+  .control-group
+    .controls
+      = image_tag @type_de_mouvement.image.url(:thumb) if @type_de_mouvement.image.url
   = f.input :image
   = f.input :revenu
   .form-actions

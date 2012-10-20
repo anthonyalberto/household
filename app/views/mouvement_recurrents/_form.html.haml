@@ -2,7 +2,6 @@
   = f.association :payeur
   = f.input :montant
   = f.association :type_de_mouvement
-  = f.input :fini
   = f.input :pourcent_a_facturer_a_lautre
   = f.select :frequence_manuelle, Mouvement.options_for_frequences()
   = f.select :frequence_automatique, Mouvement.options_for_frequences()

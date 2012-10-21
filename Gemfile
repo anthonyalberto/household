@@ -12,12 +12,13 @@ gem 'rmagick'
 # Gems used only for assets and not required
 # in production environments by default.
 gem 'sass-rails',   '~> 3.2.3'
+gem 'twitter-bootstrap-rails'
 group :assets do
 
   gem 'coffee-rails', '~> 3.2.1'
   gem 'compass-rails'
   gem 'therubyracer', :platforms => :ruby
-  gem 'twitter-bootstrap-rails'
+
   gem 'font-awesome-rails'
   gem 'bootstrap-colorpicker-rails'
   gem 'jquery-ui-rails'

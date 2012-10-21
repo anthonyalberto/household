@@ -76,6 +76,7 @@ class MouvementsController < ApplicationController
   def destroy
     @mouvement = Mouvement.find(params[:id])
     @mouvement.destroy
+    Balance.current.recalculate!
     flash[:notice] = "Supprime avec succes"
 
     respond_to do |format|

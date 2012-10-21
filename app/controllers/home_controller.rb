@@ -2,7 +2,8 @@ class HomeController < ApplicationController
   skip_before_filter :authenticate_utilisateur!
   def index
     if !current_utilisateur
-      render nothing: true
+      @chat = Chat.all.sample
+      render layout: "guest"
       return
     end
 

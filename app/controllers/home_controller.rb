@@ -6,5 +6,7 @@ class HomeController < ApplicationController
       return
     end
 
+    @chat = current_utilisateur.chat
+
   end
 end

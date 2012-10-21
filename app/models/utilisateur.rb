@@ -9,6 +9,8 @@ class Utilisateur < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
 
+  belongs_to :chat
+
   def gravatar_url
     gravatar_id = Digest::MD5::hexdigest(email).downcase
     "http://gravatar.com/avatar/#{gravatar_id}.png"

@@ -1,3 +1,5 @@
+#encoding: utf-8
+
 class BalancesController < ApplicationController
   # GET /balances
   # GET /balances.json
@@ -79,5 +81,12 @@ class BalancesController < ApplicationController
       format.html { redirect_to balances_url }
       format.json { head :no_content }
     end
+  end
+
+
+  def clore
+    Balance.current.clore!
+    flash[:notice] = "Balance cloturée. Une nouvelle balance a été créée."
+    redirect_to balances_path
   end
 end

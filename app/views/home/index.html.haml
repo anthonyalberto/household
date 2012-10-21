@@ -1,1 +1,9 @@
-Index
+%h1
+  La pensée du jour de
+  = @chat.name
+.home
+  .image
+    = image_tag @chat.image.url
+  %blockquote.bubble
+    %p
+      = @chat.pensee_random

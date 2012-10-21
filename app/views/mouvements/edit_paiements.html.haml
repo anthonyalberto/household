@@ -11,7 +11,7 @@
       = "Actuellement, les comptes sont à l'equilibre. #{image_tag(@left_user.gravatar_url).html_safe} <3 #{image_tag(@right_user.gravatar_url).html_safe}".html_safe
 
 
-= form_tag update_mouvements_path do
+= form_tag update_mouvements_path, method: "put" do
   = hidden_field_tag "revenu", false
   = render 'one_user_paiements', user: current_utilisateur, mouvements: @mouvements_main
   .page-header

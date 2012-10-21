@@ -1,7 +1,12 @@
 Household::Application.routes.draw do
 
+  resources :texte_de_chats
+
+  resources :chats
+
   resources :balance_utilisateurs
 
+  get "balances/clore", to: "balances#clore", as: :clore_balance
   resources :balances
 
   resources :mouvement_recurrents

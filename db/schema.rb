@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121020203310) do
+ActiveRecord::Schema.define(:version => 20121021125250) do
 
   create_table "balance_utilisateurs", :force => true do |t|
     t.integer  "utilisateur_id", :null => false
@@ -33,6 +33,13 @@ ActiveRecord::Schema.define(:version => 20121020203310) do
   end
 
   add_index "balances", ["fini"], :name => "index_balances_on_fini"
+
+  create_table "chats", :force => true do |t|
+    t.string   "name"
+    t.string   "image"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "monnaies", :force => true do |t|
     t.string   "iso",                                  :null => false
@@ -79,6 +86,16 @@ ActiveRecord::Schema.define(:version => 20121020203310) do
   add_index "mouvements", ["payeur_id"], :name => "index_mouvements_on_payeur_id"
   add_index "mouvements", ["type_de_mouvement_id"], :name => "index_mouvements_on_type_de_mouvement_id"
 
+  create_table "texte_de_chats", :force => true do |t|
+    t.string   "type_de_texte"
+    t.integer  "chat_id"
+    t.string   "texte"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "texte_de_chats", ["chat_id"], :name => "index_texte_de_chats_on_chat_id"
+
   create_table "type_de_mouvements", :force => true do |t|
     t.string   "nom",                           :null => false
     t.integer  "position",                      :null => false
@@ -103,6 +120,7 @@ ActiveRecord::Schema.define(:version => 20121020203310) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "name",                                   :null => false
+    t.integer  "chat_id"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
   end

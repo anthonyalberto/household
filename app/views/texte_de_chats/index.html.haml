@@ -1,0 +1,25 @@
+- model_class = TexteDeChat
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:type_de_texte)
+      %th= model_class.human_attribute_name(:chat_id)
+      %th= model_class.human_attribute_name(:texte)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @texte_de_chats.each do |texte_de_chat|
+      %tr
+        %td= link_to texte_de_chat.id, texte_de_chat_path(texte_de_chat)
+        %td= texte_de_chat.type_de_texte
+        %td= image_tag texte_de_chat.chat.image.url(:thumb)
+        %td= texte_de_chat.texte
+        %td=l texte_de_chat.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_texte_de_chat_path(texte_de_chat), :class => 'btn btn-mini'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), texte_de_chat_path(texte_de_chat), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
+
+= link_to t('.new', :default => t("helpers.links.new")), new_texte_de_chat_path, :class => 'btn btn-primary'

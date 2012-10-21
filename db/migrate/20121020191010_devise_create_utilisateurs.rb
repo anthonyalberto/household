@@ -34,7 +34,7 @@ class DeviseCreateUtilisateurs < ActiveRecord::Migration
       # t.string :authentication_token
 
       t.string :name, null: false
-
+      t.references :chat
 
       t.timestamps
     end

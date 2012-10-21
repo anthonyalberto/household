@@ -1,0 +1,10 @@
+= simple_form_for @texte_de_chat, :html => { :class => 'form-horizontal' } do |f|
+  .control-group
+    = f.label :type_de_texte
+    .controls
+      = f.select :type_de_texte, TexteDeChat.type_de_textes
+  = f.association :chat
+  = f.input :texte
+  .form-actions
+    = f.button :submit, :class => 'btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), texte_de_chats_path, :class => 'btn'

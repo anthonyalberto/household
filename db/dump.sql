@@ -69,7 +69,7 @@ CREATE TABLE `balances` (
 
 LOCK TABLES `balances` WRITE;
 /*!40000 ALTER TABLE `balances` DISABLE KEYS */;
-INSERT INTO `balances` VALUES (1,'Balance courante',0,0,'2012-10-21 14:35:46','2012-10-21 14:35:46');
+INSERT INTO `balances` VALUES (1,'Balance courante',0,0,'2012-10-21 14:38:00','2012-10-21 14:38:00');
 /*!40000 ALTER TABLE `balances` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -96,7 +96,7 @@ CREATE TABLE `chats` (
 
 LOCK TABLES `chats` WRITE;
 /*!40000 ALTER TABLE `chats` DISABLE KEYS */;
-INSERT INTO `chats` VALUES (1,'Miniwu','miniwu.jpg','2012-10-21 14:35:44','2012-10-21 14:35:44'),(2,'Domino','domino.jpg','2012-10-21 14:35:44','2012-10-21 14:35:44');
+INSERT INTO `chats` VALUES (1,'Miniwu','miniwu.jpg','2012-10-21 14:37:58','2012-10-21 14:37:58'),(2,'Domino','domino.jpg','2012-10-21 14:37:58','2012-10-21 14:37:58');
 /*!40000 ALTER TABLE `chats` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -247,7 +247,7 @@ CREATE TABLE `texte_de_chats` (
 
 LOCK TABLES `texte_de_chats` WRITE;
 /*!40000 ALTER TABLE `texte_de_chats` DISABLE KEYS */;
-INSERT INTO `texte_de_chats` VALUES (1,'Pensée',1,'Où sont mes croquettes ?','2012-10-21 14:35:44','2012-10-21 14:35:44'),(2,'Pensée',1,'Le jour où le Sumo sera un sport olympique, j\'aurais une chance de médaille.','2012-10-21 14:35:44','2012-10-21 14:35:44'),(3,'Pensée',1,'Qui est l\'enfoiré qui m\'a mis à la diète ?','2012-10-21 14:35:44','2012-10-21 14:35:44'),(4,'Pensée',1,'Moi, gros ? Tu t\'es pas vu toi.','2012-10-21 14:35:44','2012-10-21 14:35:44'),(5,'Pensée',1,'Aujourd\'hui je vais ... dormir, comme d\'habitude.','2012-10-21 14:35:44','2012-10-21 14:35:44'),(6,'Pensée',1,'Je serais propre à la litière quand l\'autre fatigant arrêtera de me casser les oreilles.','2012-10-21 14:35:44','2012-10-21 14:35:44'),(7,'Pensée',2,'Miawwwwwwwwwwwwww Miawwwwwwwwwwwwwwwww Miawwwwwwwwwwwwwwwwwww','2012-10-21 14:35:44','2012-10-21 14:35:44'),(8,'Pensée',2,'Cette nuit Domino le roi a joué à \'On connait la chanson\'. Cela n\'a pas plu à l\'autre rabat-joie à en croire le vol plané de Domino le roi du 3eme étage.','2012-10-21 14:35:44','2012-10-21 14:35:44'),(9,'Pensée',2,'A cause de l\'autre gros tas, Domino le roi mange des croquettes de régime. Le chef de meute est désemparé.','2012-10-21 14:35:44','2012-10-21 14:35:44'),(10,'Pensée',2,'Domino le roi aime tous les membres de sa meute, sauf un.','2012-10-21 14:35:44','2012-10-21 14:35:44'),(11,'Pensée',2,'Domino le roi a mangé une touffe de poil - et oui encore. Heureusement Domino le roi ne nettoie pas le plancher.','2012-10-21 14:35:44','2012-10-21 14:35:44'),(12,'Pensée',2,'Domino le roi n\'aime pas beaucoup que son larbin ne se ramasse pas dans la litière. Domino le roi va faire ailleurs puisque c\'est comme cela.','2012-10-21 14:35:44','2012-10-21 14:35:44');
+INSERT INTO `texte_de_chats` VALUES (1,'Pensée',1,'Où sont mes croquettes ?','2012-10-21 14:37:58','2012-10-21 14:37:58'),(2,'Pensée',1,'Le jour où le Sumo sera un sport olympique, j\'aurais une chance de médaille.','2012-10-21 14:37:58','2012-10-21 14:37:58'),(3,'Pensée',1,'Qui est l\'enfoiré qui m\'a mis à la diète ?','2012-10-21 14:37:58','2012-10-21 14:37:58'),(4,'Pensée',1,'Moi, gros ? Tu t\'es pas vu toi.','2012-10-21 14:37:58','2012-10-21 14:37:58'),(5,'Pensée',1,'Aujourd\'hui je vais ... dormir, comme d\'habitude.','2012-10-21 14:37:58','2012-10-21 14:37:58'),(6,'Pensée',1,'Je serais propre à la litière quand l\'autre fatigant arrêtera de me casser les oreilles.','2012-10-21 14:37:58','2012-10-21 14:37:58'),(7,'Pensée',2,'Miawwwwwwwwwwwwww Miawwwwwwwwwwwwwwwww Miawwwwwwwwwwwwwwwwwww','2012-10-21 14:37:58','2012-10-21 14:37:58'),(8,'Pensée',2,'Cette nuit Domino le roi a joué à \'On connait la chanson\'. Cela n\'a pas plu à l\'autre rabat-joie à en croire le vol plané de Domino le roi du 3eme étage.','2012-10-21 14:37:58','2012-10-21 14:37:58'),(9,'Pensée',2,'A cause de l\'autre gros tas, Domino le roi mange des croquettes de régime. Le chef de meute est désemparé.','2012-10-21 14:37:58','2012-10-21 14:37:58'),(10,'Pensée',2,'Domino le roi aime tous les membres de sa meute, sauf un.','2012-10-21 14:37:58','2012-10-21 14:37:58'),(11,'Pensée',2,'Domino le roi a mangé une touffe de poil - et oui encore. Heureusement Domino le roi ne nettoie pas le plancher.','2012-10-21 14:37:58','2012-10-21 14:37:58'),(12,'Pensée',2,'Domino le roi n\'aime pas beaucoup que son larbin ne se ramasse pas dans la litière. Domino le roi va faire ailleurs puisque c\'est comme cela.','2012-10-21 14:37:58','2012-10-21 14:37:58');
 /*!40000 ALTER TABLE `texte_de_chats` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -278,7 +278,7 @@ CREATE TABLE `type_de_mouvements` (
 
 LOCK TABLES `type_de_mouvements` WRITE;
 /*!40000 ALTER TABLE `type_de_mouvements` DISABLE KEYS */;
-INSERT INTO `type_de_mouvements` VALUES (1,'Epicerie',1,'epicerie.jpg',0,'2012-10-21 14:35:45','2012-10-21 14:35:45'),(2,'Walmart',2,'walmart.jpg',0,'2012-10-21 14:35:45','2012-10-21 14:35:45'),(3,'jardin_bricolage_maison_etc',3,'jardin_bricolage.jpg',0,'2012-10-21 14:35:45','2012-10-21 14:35:45'),(4,'Chats',4,'chats.jpg',0,'2012-10-21 14:35:45','2012-10-21 14:35:45'),(5,'Scrapbooking',5,'scrapbooking.jpg',0,'2012-10-21 14:35:45','2012-10-21 14:35:45'),(6,'Taxes',7,'taxes.jpg',0,'2012-10-21 14:35:45','2012-10-21 14:35:45'),(7,'Custom',6,'custom.jpg',0,'2012-10-21 14:35:45','2012-10-21 14:35:45'),(8,'Hypotheque',100,'hypotheque.jpg',0,'2012-10-21 14:35:46','2012-10-21 14:35:46'),(9,'frais_de_condo',101,'frais_de_condo.jpg',0,'2012-10-21 14:35:46','2012-10-21 14:35:46'),(10,'assurance_condo',102,'assurance-condo.png',0,'2012-10-21 14:35:46','2012-10-21 14:35:46'),(11,'Videotron',103,'videotron.gif',0,'2012-10-21 14:35:46','2012-10-21 14:35:46'),(12,'Hydro',104,'hydro.jpg',0,'2012-10-21 14:35:46','2012-10-21 14:35:46'),(13,'Communauto',105,'communauto.jpg',0,'2012-10-21 14:35:46','2012-10-21 14:35:46'),(14,'Fido',106,'fido.png',0,'2012-10-21 14:35:46','2012-10-21 14:35:46'),(15,'Salaire',2,'salaire.jpg',1,'2012-10-21 14:35:46','2012-10-21 14:35:46'),(16,'Kijiji',1,'kijiji.jpg',1,'2012-10-21 14:35:46','2012-10-21 14:35:46'),(17,'retour_dimpot',3,'retour_impot.jpg',1,'2012-10-21 14:35:46','2012-10-21 14:35:46');
+INSERT INTO `type_de_mouvements` VALUES (1,'Epicerie',1,'epicerie.jpg',0,'2012-10-21 14:37:59','2012-10-21 14:37:59'),(2,'Walmart',2,'walmart.jpg',0,'2012-10-21 14:37:59','2012-10-21 14:37:59'),(3,'jardin_bricolage_maison_etc',3,'jardin_bricolage.jpg',0,'2012-10-21 14:37:59','2012-10-21 14:37:59'),(4,'Chats',4,'chats.jpg',0,'2012-10-21 14:37:59','2012-10-21 14:37:59'),(5,'Scrapbooking',5,'scrapbooking.jpg',0,'2012-10-21 14:37:59','2012-10-21 14:37:59'),(6,'Taxes',7,'taxes.jpg',0,'2012-10-21 14:37:59','2012-10-21 14:37:59'),(7,'Custom',6,'custom.jpg',0,'2012-10-21 14:37:59','2012-10-21 14:37:59'),(8,'Hypotheque',100,'hypotheque.jpg',0,'2012-10-21 14:37:59','2012-10-21 14:37:59'),(9,'frais_de_condo',101,'frais_de_condo.jpg',0,'2012-10-21 14:37:59','2012-10-21 14:37:59'),(10,'assurance_condo',102,'assurance-condo.png',0,'2012-10-21 14:37:59','2012-10-21 14:37:59'),(11,'Videotron',103,'videotron.gif',0,'2012-10-21 14:38:00','2012-10-21 14:38:00'),(12,'Hydro',104,'hydro.jpg',0,'2012-10-21 14:38:00','2012-10-21 14:38:00'),(13,'Communauto',105,'communauto.jpg',0,'2012-10-21 14:38:00','2012-10-21 14:38:00'),(14,'Fido',106,'fido.png',0,'2012-10-21 14:38:00','2012-10-21 14:38:00'),(15,'Salaire',2,'salaire.jpg',1,'2012-10-21 14:38:00','2012-10-21 14:38:00'),(16,'Kijiji',1,'kijiji.jpg',1,'2012-10-21 14:38:00','2012-10-21 14:38:00'),(17,'retour_dimpot',3,'retour_impot.jpg',1,'2012-10-21 14:38:00','2012-10-21 14:38:00');
 /*!40000 ALTER TABLE `type_de_mouvements` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -317,7 +317,7 @@ CREATE TABLE `utilisateurs` (
 
 LOCK TABLES `utilisateurs` WRITE;
 /*!40000 ALTER TABLE `utilisateurs` DISABLE KEYS */;
-INSERT INTO `utilisateurs` VALUES (1,'alberto.anthony@gmail.com','$2a$10$sECkIWgF39f9/MPT/2W64eaz.KIC22K0.myxYyRGHmFufjY.Jj4rK',NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,'Anthony',1,'2012-10-21 14:35:44','2012-10-21 14:35:44'),(2,'katwondoo@gmail.com','$2a$10$GygeOJI1qxkhTDmH6ZYU8u.1udqYp5fPkmEmtYgX9FsWY4GnmThp6',NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,'Catherine',2,'2012-10-21 14:35:45','2012-10-21 14:35:45');
+INSERT INTO `utilisateurs` VALUES (1,'alberto.anthony@gmail.com','$2a$10$urK3sFLKXYVsvNLeKZ/9d.DyKVYlTZxlUoO5FY7Bi5e1RkZ4geHLy',NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,'Anthony',1,'2012-10-21 14:37:59','2012-10-21 14:37:59'),(2,'katwondoo@gmail.com','$2a$10$ZTuK4aPgNlXw58dWiFi/OuI/7LSXPpd0faXqgV8U2KQuErHf2yxlG',NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,'Catherine',2,'2012-10-21 14:37:59','2012-10-21 14:37:59');
 /*!40000 ALTER TABLE `utilisateurs` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -330,4 +330,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-10-21  7:36:17
+-- Dump completed on 2012-10-21  7:38:12

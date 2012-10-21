@@ -1,0 +1,9 @@
+- flash.each do |name, msg|
+  %div{:class => "alert alert-#{name == :notice ? "success" : "error"}"}
+    %a.close{"data-dismiss" => "alert"} &#215;
+    = content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String)
+- if !get_form_object_errors.empty?
+  - get_form_object_errors.full_messages.each_with_index do |msg, index|
+    .alert.alert-error
+      %a.close{"data-dismiss" => "alert"} &#215;
+      = content_tag :div, "#{msg}", :id => "flash_#{index}" if msg.is_a?(String)

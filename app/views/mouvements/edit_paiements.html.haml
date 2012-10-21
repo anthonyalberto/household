@@ -1,0 +1,21 @@
+- @model_class = Mouvement
+.page-header
+
+
+  %h2
+    - if @balance.montant > 0
+      = "Actuellement, #{image_tag(@left_user.gravatar_url).html_safe} #{@left_user.name}  doit #{humanized_money_with_symbol @balance.montant} à #{image_tag(@right_user.gravatar_url).html_safe} #{@right_user.name}".html_safe
+    - elsif @balance.montant < 0
+      = "Actuellement, #{image_tag(@right_user.gravatar_url).html_safe} #{@right_user.name} doit #{humanized_money_with_symbol @balance.montant_inverse} à #{image_tag(@left_user.gravatar_url).html_safe} #{@left_user.name}".html_safe
+    - else
+      = "Actuellement, les comptes sont à l'equilibre. #{image_tag(@left_user.gravatar_url).html_safe} <3 #{image_tag(@right_user.gravatar_url).html_safe}".html_safe
+
+
+= form_tag update_mouvements_path do
+  = hidden_field_tag "revenu", false
+  = render 'one_user_paiements', user: current_utilisateur, mouvements: @mouvements_main
+  .page-header
+    &nbsp;
+  = render 'one_user_paiements', user: @other_user, mouvements: @mouvements_second
+
+  = submit_tag "Submit", :class => 'btn btn-primary'

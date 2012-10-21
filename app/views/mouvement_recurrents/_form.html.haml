@@ -1,10 +1,16 @@
 = simple_form_for @mouvement_recurrent, :html => { :class => 'form-horizontal' } do |f|
   = f.association :payeur
   = f.input :montant
-  = f.association :type_de_mouvement
+  = f.association :type_de_mouvement, label_method: :nom, :prompt => "Choisir"
   = f.input :pourcent_a_facturer_a_lautre
-  = f.select :frequence_manuelle, Mouvement.options_for_frequences()
-  = f.select :frequence_automatique, Mouvement.options_for_frequences()
+  .control-group
+    = f.label :frequence_manuelle
+    .controls
+      = f.select :frequence_manuelle, Mouvement.frequences
+  .control-group
+    = f.label :frequence_automatique
+    .controls
+      = f.select :frequence_automatique, Mouvement.frequences
   .form-actions
     = f.button :submit, :class => 'btn-primary'
     = link_to t('.cancel', :default => t("helpers.links.cancel")), mouvement_recurrents_path, :class => 'btn'

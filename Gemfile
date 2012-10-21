@@ -37,7 +37,7 @@ gem 'money-rails'
 gem 'carrierwave'
 gem 'devise'
 gem 'nested_form', git: "https://github.com/anthonyalberto/nested_form.git"
-
+gem 'quiet_assets', :group => :development
 
 gem "awesome_print"
 group :development, :test do

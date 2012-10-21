@@ -10,6 +10,7 @@
       %th= model_class.human_attribute_name(:montant)
       %th= model_class.human_attribute_name(:type_de_mouvement)
       %th= model_class.human_attribute_name(:fini)
+      %th= model_class.human_attribute_name(:revenu)
       %th= model_class.human_attribute_name(:pourcent_a_facturer_a_lautre)
       %th= model_class.human_attribute_name(:created_at)
       %th=t '.actions', :default => t("helpers.actions")
@@ -27,6 +28,7 @@
           = mouvement.type_de_mouvement.nom
           = image_tag mouvement.type_de_mouvement.image.url(:thumb)
         %td= mouvement.fini
+        %td= mouvement.revenu
         %td= mouvement.pourcent_a_facturer_a_lautre
         %td=l mouvement.created_at
         %td

@@ -75,10 +75,88 @@ class MouvementsController < ApplicationController
   def destroy
     @mouvement = Mouvement.find(params[:id])
     @mouvement.destroy
+    flash[:notice] = "Supprime avec succes"
 
     respond_to do |format|
-      format.html { redirect_to mouvements_url }
+      format.html { redirect_to :back }
       format.json { head :no_content }
     end
   end
+
+  def new_paiements
+    @mouvements = []
+    30.times do
+      @mouvements << Mouvement.new(payeur_id: current_utilisateur)
+    end
+    @title = "Nouveaux paiements"
+    @form_url = create_mouvements_path
+    @revenu = false
+    @mode = "new"
+    render action: :mouvements
+  end
+
+  def new_revenus
+    @mouvements = []
+    30.times do
+      @mouvements << Mouvement.new(payeur_id: current_utilisateur, revenu: true)
+    end
+    @title = "Nouveaux revenus"
+    @revenu = true
+    @form_url = create_mouvements_path
+    @mode = "new"
+    render action: :mouvements
+  end
+
+  def edit_paiements
+    @other_user = Utilisateur.where("id != ?", current_utilisateur).first
+    @mouvements_main = Mouvement.where(payeur_id: current_utilisateur, revenu: false, fini: 0).order("id DESC")
+    @mouvements_second = Mouvement.where(payeur_id: @other_user, revenu: false, fini: 0).order("id DESC")
+    @balance = Balance.current
+    @is_primary_user = true if current_utilisateur.id == 1
+
+    if @is_primary_user
+      @left_user = @other_user
+      @right_user = current_utilisateur
+    else
+      @left_user = current_utilisateur
+      @right_user = @other_user
+    end
+
+
+  end
+
+  def edit_revenus
+    @mouvements = Mouvement.where(payeur_id: current_utilisateur, revenu: true).order("id DESC")
+    @title = "Revenus"
+    @revenu = true
+    @form_url = update_mouvements_path
+    @mode = "edit"
+    render action: :mouvements
+  end
+
+  def create_mouvements
+    #begin
+    params[:mouvements].each do |mouvement|
+      next if mouvement[:montant].blank? || mouvement[:type_de_mouvement_id].blank?
+      Mouvement.create(mouvement)
+    end
+
+    if params[:revenu] == "true"
+      redirect_to :edit_revenus, notice: 'Succes, les nouveaux revenus ont ete ajoute a la liste ci-dessous'
+    else
+      redirect_to :edit_paiements, notice: 'Succes, les nouveaux paiements ont ete ajoute a la liste ci-dessous'
+    end
+
+
+  end
+
+  def update_mouvements
+    params[:mouvements].each do |mouvement|
+      next if mouvement[:montant].blank? || mouvement[:type_de_mouvement_id].blank?
+      Mouvement.update(mouvement)
+    end
+    redirect_to :edit_paiements, notice: 'Success, les paiements ont ete modifie'
+  end
+
+
 end

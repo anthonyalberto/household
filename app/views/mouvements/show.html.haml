@@ -11,9 +11,9 @@
   %br
   = @mouvement.texte
 %p
-  %strong= model_class.human_attribute_name(:montant_cents) + ':'
+  %strong= model_class.human_attribute_name(:montant) + ':'
   %br
-  = @mouvement.montant_cents
+  = @mouvement.montant
 %p
   %strong= model_class.human_attribute_name(:type_de_mouvement_id) + ':'
   %br
@@ -22,6 +22,10 @@
   %strong= model_class.human_attribute_name(:fini) + ':'
   %br
   = @mouvement.fini
+%p
+  %strong= model_class.human_attribute_name(:revenu) + ':'
+  %br
+  = @mouvement.revenu
 %p
   %strong= model_class.human_attribute_name(:pourcent_a_facturer_a_lautre) + ':'
   %br

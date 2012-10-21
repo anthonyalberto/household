@@ -63,12 +63,15 @@ ActiveRecord::Schema.define(:version => 20121020203310) do
     t.string   "texte"
     t.integer  "montant_cents",                                   :null => false
     t.integer  "type_de_mouvement_id"
+    t.integer  "balance_id"
     t.boolean  "fini",                         :default => false, :null => false
     t.float    "pourcent_a_facturer_a_lautre", :default => 50.0,  :null => false
+    t.boolean  "revenu",                       :default => false, :null => false
     t.datetime "created_at",                                      :null => false
     t.datetime "updated_at",                                      :null => false
   end
 
+  add_index "mouvements", ["balance_id"], :name => "index_mouvements_on_balance_id"
   add_index "mouvements", ["fini"], :name => "index_mouvements_on_fini"
   add_index "mouvements", ["payeur_id", "fini"], :name => "index_mouvements_on_payeur_id_and_fini"
   add_index "mouvements", ["payeur_id", "type_de_mouvement_id", "fini"], :name => "index_mouvements_on_payeur_id_and_type_de_mouvement_id_and_fini"

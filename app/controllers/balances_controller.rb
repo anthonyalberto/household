@@ -2,7 +2,7 @@ class BalancesController < ApplicationController
   # GET /balances
   # GET /balances.json
   def index
-    @balances = Balance.all.order("fini DESC, id DESC")
+    @balances = Balance.order("fini DESC, id DESC")
 
     respond_to do |format|
       format.html # index.html.erb

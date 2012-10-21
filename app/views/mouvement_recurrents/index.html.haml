@@ -6,7 +6,7 @@
     %tr
       %th= model_class.human_attribute_name(:id)
       %th= model_class.human_attribute_name(:payeur_id)
-      %th= model_class.human_attribute_name(:montant_cents)
+      %th= model_class.human_attribute_name(:montant)
       %th= model_class.human_attribute_name(:type_de_mouvement_id)
       %th= model_class.human_attribute_name(:pourcent_a_facturer_a_lautre)
       %th= model_class.human_attribute_name(:frequence_manuelle)
@@ -17,9 +17,13 @@
     - @mouvement_recurrents.each do |mouvement_recurrent|
       %tr
         %td= link_to mouvement_recurrent.id, mouvement_recurrent_path(mouvement_recurrent)
-        %td= mouvement_recurrent.payeur_id
-        %td= mouvement_recurrent.montant_cents
-        %td= mouvement_recurrent.type_de_mouvement_id
+        %td
+          = mouvement_recurrent.payeur.name
+          = image_tag mouvement_recurrent.payeur.gravatar_url, width:50, height:50
+        %td= mouvement_recurrent.montant
+        %td
+          = mouvement_recurrent.type_de_mouvement.nom
+          = image_tag mouvement_recurrent.type_de_mouvement.image.url(:thumb)
         %td= mouvement_recurrent.pourcent_a_facturer_a_lautre
         %td= mouvement_recurrent.frequence_manuelle
         %td= mouvement_recurrent.frequence_automatique

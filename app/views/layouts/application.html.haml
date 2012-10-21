@@ -25,12 +25,13 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.brand(href="#") Gestion AA et CR
+          %a.brand(href="#") Gestion AA et CR (+ les chats)
           .container.nav-collapse
             %ul.nav
-              %li= link_to "Link 1", "/path1"
-              %li= link_to "Link 2", "/path2"
-              %li= link_to "Link 3", "/path3"
+              %li= link_to "Ajout de paiements", :new_paiements
+              %li= link_to "Consulter les paiements", :edit_paiements
+              %li= link_to "Ajout de revenus", :new_revenus
+              %li= link_to "Consulter les revenus", :edit_revenus
 
     .container-fluid
 
@@ -45,10 +46,8 @@
               %li= link_to "Type de mouvements", type_de_mouvements_path
               %li= link_to "Monnaies", monnaies_path
         .span9
-          - if notice
-            .alert= notice
-          - if alert
-            .alert= alert
+
+          = render 'layouts/messages'
           = yield
     
       %footer

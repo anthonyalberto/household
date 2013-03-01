@@ -22,4 +22,4 @@ production:
   adapter: mysql2
   database: household
   username: household
-  password: HByubUIBiub!97Guib?
+  password: prodpass

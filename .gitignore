@@ -16,3 +16,5 @@
 
 .idea
 public/assets
+config/database.yml
+public/uploads

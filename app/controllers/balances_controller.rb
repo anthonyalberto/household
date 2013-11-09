@@ -16,6 +16,10 @@ class BalancesController < ApplicationController
   # GET /balances/1.json
   def show
     @balance = Balance.find(params[:id])
+    @other_user = Utilisateur.where("id != ?", current_utilisateur.id).first
+    @is_primary_user = true if current_utilisateur.id == 1
+    @mouvements_main = Mouvement.where(payeur_id: current_utilisateur.id, revenu: false, balance_id: @balance.id).order("id DESC")
+    @mouvements_second = Mouvement.where(payeur_id: @other_user, revenu: false, balance_id: @balance.id).order("id DESC")
 
     respond_to do |format|
       format.html # show.html.erb

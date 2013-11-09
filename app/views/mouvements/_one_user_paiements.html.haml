@@ -1,3 +1,5 @@
+- no_action = local_assigns[:no_action] || false
+
 %h3= "Paiements de #{user.name}, pour un total de #{humanized_money_with_symbol(sum_montants(mouvements))}"
 %table.table.table-striped.table_form.half_table
   %thead
@@ -8,16 +10,17 @@
       %th= @model_class.human_attribute_name(:payeur_id)
       %th Commentaire
       %th Date
-      %th Action
+      - unless no_action
+        %th Action
   %tbody
     - mouvements.each do |mouvement|
       = fields_for "mouvements[]", mouvement do |f|
         = f.hidden_field :revenu
         %tr
-          %td= f.text_field :montant
-          %td= f.collection_select :type_de_mouvement_id, TypeDeMouvement.where(revenu: false), :id, :nom, :prompt => "Choisir"
-          %td= f.number_field :pourcent_a_facturer_a_lautre
-          %td= f.collection_select :payeur_id, Utilisateur.all, :id, :name, :prompt => "Choisir"
-          %td= f.text_field :texte
+          %td= f.text_field :montant, disabled: no_action
+          %td= f.collection_select :type_de_mouvement_id, TypeDeMouvement.where(revenu: false), :id, :nom, { :prompt => "Choisir" } , disabled: no_action
+          %td= f.number_field :pourcent_a_facturer_a_lautre, disabled: no_action
+          %td= f.collection_select :payeur_id, Utilisateur.all, :id, :name, { :prompt => "Choisir" }, disabled: no_action
+          %td= f.text_field :texte, disabled: no_action
           %td= l(mouvement.created_at)
-          %td= link_to t('.destroy', :default => t("helpers.links.destroy")), mouvement_path(mouvement), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
+          %td= link_to t('.destroy', :default => t("helpers.links.destroy")), mouvement_path(mouvement), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger' unless no_action

@@ -15,7 +15,8 @@
   %br
   = @balance.fini
 
-.form-actions
-  = link_to t('.back', :default => t("helpers.links.back")), balances_path, :class => 'btn'
-  = link_to t('.edit', :default => t("helpers.links.edit")), edit_balance_path(@balance), :class => 'btn'
-  = link_to t('.destroy', :default => t("helpers.links.destroy")), balance_path(@balance), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
+- @model_class = Mouvement
+= render 'mouvements/one_user_paiements', user: current_utilisateur, mouvements: @mouvements_main, no_action: true
+.page-header
+  &nbsp;
+= render 'mouvements/one_user_paiements', user: @other_user, mouvements: @mouvements_second, no_action: true

@@ -1,25 +1,33 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.15'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
-gem 'rmagick'
+gem 'rmagick', '~> 2.13.2'
 
 
 # Gems used only for assets and not required
 # in production environments by default.
-gem 'sass-rails', '~> 3.2.3'
-gem 'twitter-bootstrap-rails'
+# gem 'less-rails'
+# gem 'sass-rails', '~> 3.2.3'
+# gem 'twitter-bootstrap-rails'
+# gem 'therubyracer', :platforms => :ruby
+gem 'sass', '>= 3.2.4'
+
+gem 'sass-rails', '>= 3.2' # sass-rails needs to be higher than 3.2
+gem "bootstrap-sass", "~> 2.2.2.0"
+
 group :assets do
 
   gem 'coffee-rails', '~> 3.2.1'
-  gem 'compass-rails'
-  gem 'therubyracer', :platforms => :ruby
+  gem 'compass-rails', '~> 1.0.3'
 
-  gem 'font-awesome-rails'
+  gem "font-awesome-sass-rails", '~> 3.0.2.2'
+
+  # gem 'font-awesome-rails'
   gem 'bootstrap-colorpicker-rails'
   gem 'jquery-ui-rails'
   gem 'turbolinks'
@@ -46,7 +54,6 @@ group :development, :test do
   gem 'rspec-rails', '>=2.11.0'
   gem "factory_girl_rails", "~> 3.2.0"
   gem "guard-rspec", "~> 0.7.0"
-  gem "debugger"
 
 end
 

@@ -1,0 +1,40 @@
+#encoding: utf-8
+Chat.create({id: 1, name: "Miniwu", image: File.open(Rails.root.join("app", "assets", "images", "chats", "miniwu.jpg"))}, without_protection: true)
+Chat.create({id: 2, name: "Domino", image: File.open(Rails.root.join("app", "assets", "images", "chats", "domino.jpg"))}, without_protection: true)
+
+miniwu_pensees = ["Où sont mes croquettes ?", "Le jour où le Sumo sera un sport olympique, j'aurais une chance de médaille.", "Qui est l'enfoiré qui m'a mis à la diète ?", "Moi, gros ? Tu t'es pas vu toi.", "Aujourd'hui je vais ... dormir, comme d'habitude.", "Je serais propre à la litière quand l'autre fatigant arrêtera de me casser les oreilles."]
+domino_pensees = ["Miawwwwwwwwwwwwww Miawwwwwwwwwwwwwwwww Miawwwwwwwwwwwwwwwwwww", "Cette nuit Domino le roi a joué à 'On connait la chanson'. Cela n'a pas plu à l'autre rabat-joie à en croire le vol plané de Domino le roi du 3eme étage.", "A cause de l'autre gros tas, Domino le roi mange des croquettes de régime. Le chef de meute est désemparé.",
+                  "Domino le roi aime tous les membres de sa meute, sauf un.", "Domino le roi a mangé une touffe de poil - et oui encore. Heureusement Domino le roi ne nettoie pas le plancher.", "Domino le roi n'aime pas beaucoup que son larbin ne se ramasse pas dans la litière. Domino le roi va faire ailleurs puisque c'est comme cela."]
+
+miniwu_pensees.each do |pensee|
+  TexteDeChat.create(chat_id: 1, type_de_texte: "Pensée", texte: pensee)
+end
+domino_pensees.each do |pensee|
+  TexteDeChat.create(chat_id: 2, type_de_texte: "Pensée", texte: pensee)
+end
+
+Utilisateur.create({id: 1, name: "Anthony", chat_id: 1, email: "TODO", password: "TODO", password_confirmation: "TODO"}, without_protection: true)
+Utilisateur.create({id: 2, name: "Catherine", chat_id: 2, email: "TODO", password: "TODO", password_confirmation: "TODO"}, without_protection: true)
+
+TypeDeMouvement.create({nom: "Epicerie", position: 1, revenu: false, image: File.open(Rails.root.join("app", "assets", "images", "types_de_mouvements", "epicerie.jpg"))}, without_protection: true)
+TypeDeMouvement.create({nom: "Walmart", position: 2, revenu: false, image: File.open(Rails.root.join("app", "assets", "images", "types_de_mouvements", "walmart.jpg"))}, without_protection: true)
+TypeDeMouvement.create({nom: "jardin_bricolage_maison_etc", position: 3, revenu: false, image: File.open(Rails.root.join("app", "assets", "images", "types_de_mouvements", "jardin_bricolage.jpg"))}, without_protection: true)
+TypeDeMouvement.create({nom: "Chats", position: 4, revenu: false, image: File.open(Rails.root.join("app", "assets", "images", "types_de_mouvements", "chats.jpg"))}, without_protection: true)
+TypeDeMouvement.create({nom: "Scrapbooking", position: 5, revenu: false, image: File.open(Rails.root.join("app", "assets", "images", "types_de_mouvements", "scrapbooking.jpg"))}, without_protection: true)
+TypeDeMouvement.create({nom: "Taxes", position: 7, revenu: false, image: File.open(Rails.root.join("app", "assets", "images", "types_de_mouvements", "taxes.jpg"))}, without_protection: true)
+TypeDeMouvement.create({nom: "Custom", position: 6, revenu: false, image: File.open(Rails.root.join("app", "assets", "images", "types_de_mouvements", "custom.jpg"))}, without_protection: true)
+
+
+TypeDeMouvement.create({nom: "Hypotheque", position: 100, revenu: false, image: File.open(Rails.root.join("app", "assets", "images", "types_de_mouvements", "hypotheque.jpg"))}, without_protection: true)
+TypeDeMouvement.create({nom: "frais_de_condo", position: 101, revenu: false, image: File.open(Rails.root.join("app", "assets", "images", "types_de_mouvements", "frais_de_condo.jpg"))}, without_protection: true)
+TypeDeMouvement.create({nom: "assurance_condo", position: 102, revenu: false, image: File.open(Rails.root.join("app", "assets", "images", "types_de_mouvements", "assurance-condo.png"))}, without_protection: true)
+TypeDeMouvement.create({nom: "Videotron", position: 103, revenu: false, image: File.open(Rails.root.join("app", "assets", "images", "types_de_mouvements", "videotron.gif"))}, without_protection: true)
+TypeDeMouvement.create({nom: "Hydro", position: 104, revenu: false, image: File.open(Rails.root.join("app", "assets", "images", "types_de_mouvements", "hydro.jpg"))}, without_protection: true)
+TypeDeMouvement.create({nom: "Communauto", position: 105, revenu: false, image: File.open(Rails.root.join("app", "assets", "images", "types_de_mouvements", "communauto.jpg"))}, without_protection: true)
+TypeDeMouvement.create({nom: "Fido", position: 106, revenu: false, image: File.open(Rails.root.join("app", "assets", "images", "types_de_mouvements", "fido.png"))}, without_protection: true)
+
+TypeDeMouvement.create({nom: "Salaire", position: 2, revenu: true, image: File.open(Rails.root.join("app", "assets", "images", "types_de_mouvements", "salaire.jpg"))}, without_protection: true)
+TypeDeMouvement.create({nom: "Kijiji", position: 1, revenu: true, image: File.open(Rails.root.join("app", "assets", "images", "types_de_mouvements", "kijiji.jpg"))}, without_protection: true)
+TypeDeMouvement.create({nom: "retour_dimpot", position: 3, revenu: true, image: File.open(Rails.root.join("app", "assets", "images", "types_de_mouvements", "retour_impot.jpg"))}, without_protection: true)
+
+Balance.create(nom: "Balance courante", montant: 0, fini: 0)

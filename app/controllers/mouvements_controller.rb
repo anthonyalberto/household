@@ -24,8 +24,7 @@ class MouvementsController < ApplicationController
   # GET /mouvements/new
   # GET /mouvements/new.json
   def new
-    @mouvement = Mouvement.new
-    @mouvement.payeur = current_utilisateur
+    @mouvement = Mouvement.new(payeur_id: current_utilisateur.id, pourcent_a_facturer_a_lautre: current_utilisateur.default_pourcent_a_facturer_a_lautre)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -88,7 +87,7 @@ class MouvementsController < ApplicationController
   def new_paiements
     @mouvements = []
     30.times do
-      @mouvements << Mouvement.new(payeur_id: current_utilisateur.id)
+      @mouvements << Mouvement.new(payeur_id: current_utilisateur.id, pourcent_a_facturer_a_lautre: current_utilisateur.default_pourcent_a_facturer_a_lautre)
     end
     @title = "Nouveaux paiements"
     @form_url = create_mouvements_path

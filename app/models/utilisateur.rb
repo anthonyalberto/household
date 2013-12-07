@@ -16,4 +16,8 @@ class Utilisateur < ActiveRecord::Base
     "http://gravatar.com/avatar/#{gravatar_id}.png"
   end
 
+  def default_pourcent_a_facturer_a_lautre
+    (id == 1) ? 40 : 60
+  end
+
 end

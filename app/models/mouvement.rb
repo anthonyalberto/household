@@ -2,7 +2,7 @@ class Mouvement < ActiveRecord::Base
   belongs_to :payeur, class_name: "Utilisateur"
   belongs_to :type_de_mouvement
   belongs_to :balance
-  attr_accessible :fini, :montant, :pourcent_a_facturer_a_lautre, :texte, :payeur_id, :type_de_mouvement_id, :montant_cents, :revenu, :balance_id
+  attr_accessible :fini, :montant, :pourcent_a_facturer_a_lautre, :texte, :payeur_id, :type_de_mouvement_id, :montant_cents, :revenu, :balance_id, :pourcent_a_facturer_a_lautre
 
   validates :montant, :pourcent_a_facturer_a_lautre, :payeur, :type_de_mouvement, :balance, presence: true
 
